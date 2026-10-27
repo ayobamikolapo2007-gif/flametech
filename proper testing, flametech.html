@@ -1,0 +1,212 @@
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlameTech Studios</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#0a0a0a;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 10%;
+    background:#111;
+    position:sticky;
+    top:0;
+}
+
+nav h1{
+    color:#ff5a1f;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+nav a:hover{
+    color:#ff5a1f;
+}
+
+/* Hero */
+
+.hero{
+    height:90vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(120deg,#000,#1a1a1a);
+}
+
+.hero h2{
+    font-size:48px;
+}
+
+.hero span{
+    color:#ff5a1f;
+}
+
+.hero button{
+    padding:12px 25px;
+    border:none;
+    background:#ff5a1f;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+/* Sections */
+
+section{
+    padding:80px 10%;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    padding:25px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    background:#1c1c1c;
+}
+
+/* Contact */
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
+}
+
+button.submit{
+    background:#ff5a1f;
+    border:none;
+    padding:12px;
+    color:white;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h1>FlameTech</h1>
+<div>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+<h2>Welcome to <span>FlameTech Studios</span></h2>
+<p>Innovative Technology. Creative Solutions.</p>
+<button onclick="scrollToServices()">Explore Our Work</button>
+</section>
+
+<section id="about">
+<h2>About Us</h2>
+<p>
+FlameTech Studios is a creative technology studio focused on building modern digital solutions.
+We specialize in web development, software tools, and digital innovation that help businesses grow.
+</p>
+</section>
+
+<section id="services">
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Web Development</h3>
+<p>Modern websites built with performance and style.</p>
+</div>
+
+<div class="card">
+<h3>App Development</h3>
+<p>Powerful apps designed for real-world impact.</p>
+</div>
+
+<div class="card">
+<h3>UI/UX Design</h3>
+<p>Beautiful and intuitive digital experiences.</p>
+</div>
+
+<div class="card">
+<h3>Tech Consulting</h3>
+<p>Strategic technology solutions for growing companies.</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+
+<form onsubmit="return sendMessage()">
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button class="submit">Send Message</button>
+</form>
+
+<p id="response"></p>
+
+</section>
+
+<footer>
+<p>© 2026 FlameTech Studios | All Rights Reserved</p>
+</footer>
+
+<script>
+function scrollToServices(){
+    document.getElementById("services").scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+function sendMessage(){
+    document.getElementById("response").innerText =
+    "Thanks! Your message has been received.";
+    return false;
+}
+</script>
+
+</body>
+</html>
